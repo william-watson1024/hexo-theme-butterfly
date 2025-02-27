@@ -1205,7 +1205,7 @@ inject:
   head:
     - '<style type="text/css">#toggle-sidebar {bottom: 80px}</style>'
   bottom:
-    - <div class="aplayer no-destroy" data-id="2379161415" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div>
+    - <div class="aplayer no-destroy" data-id="13378306294" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div>
 
 
 
