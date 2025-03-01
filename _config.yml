@@ -20,13 +20,14 @@ menu:
   清单||fa fa-heartbeat:
     音乐: /music/ || fas fa-music
     照片: /Gallery/ || fas fa-images
+    诗云: /poem/ || fas fa-feather
   豆瓣||fa fa-seedling:
     电影: /movies/ || fas fa-video
     读书: /books/ || fas fa-book
     歌单: /songs/ || fas fa-music
     游戏: /games/ || fas fa-gamepad
   友链: /link/ || fas fa-link
-  关于: /about/ || fas fa-heart
+  # 关于: /about/ || fas fa-heart
   
 
 
@@ -364,7 +365,7 @@ aside:
     sort_order:
   card_newest_comments:
     # 是否显示最新评论卡片
-    enable: false
+    enable: true
     sort_order:
     # 显示评论数量
     limit: 6
@@ -609,7 +610,7 @@ comments:
   # 如果不需要评论功能，保持为空
   # 选择：Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # 两个评论系统的格式：Disqus,Waline
-  use:
+  use: Disqus
   # 按钮旁边显示评论系统名称
   text: true
   # 懒加载：评论系统将在评论元素进入浏览器视口时加载
@@ -624,17 +625,17 @@ comments:
 # 官方文档：https://disqus.com/
 disqus:
   # Disqus 的 shortname
-  shortname:
+  shortname: williamwatson
   # 最新评论小部件的 API 密钥
-  apikey:
+  apikey: YVURXwkJfiVJpQY3DTs5m0f5WEHNy9r9uUJMHef3nTEG2UsYhMbyGGcRJAHbZ2b2
 
 # 使用 Disqus API 渲染评论的替代方案
 # 官方文档：https://github.com/SukkaW/DisqusJS
 disqusjs:
   # Disqus 的 shortname
-  shortname:
+  shortname: williamwatson
   # API 密钥
-  apikey:
+  apikey: YVURXwkJfiVJpQY3DTs5m0f5WEHNy9r9uUJMHef3nTEG2UsYhMbyGGcRJAHbZ2b2
   # 其他可选配置
   option:
 
