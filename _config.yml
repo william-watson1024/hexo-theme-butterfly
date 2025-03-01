@@ -61,9 +61,8 @@ code_blocks:
 #   icon: 链接 || 描述 || 颜色
 social:
   fab fa-github: https://github.com/william-watson1024 || Github || "#hdhfbb"
-  fas fa-envelope: mailto:williamwatson1024@gmail.com || Email || "#000000"
   fab fa-qq:  tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=990764375&website=www.oicqzone.com || QQ
-
+  fa fa-envelope: mailto:williamwatson1024@gmail.com || Email || "#000000"
 # --------------------------------------
 # 图片设置
 # --------------------------------------
@@ -82,7 +81,7 @@ avatar:
 disable_top_img: false
 
 # 如果页面未设置横幅，则显示默认的横幅图片
-default_top_img: https://i.miji.bid/2025/03/01/6f6ffd1df6f363f52fd90b465cca8175.jpeg
+default_top_img: transparent
 
 # 主页的横幅图片
 index_img: https://i.miji.bid/2025/03/01/6f6ffd1df6f363f52fd90b465cca8175.jpeg
@@ -112,7 +111,7 @@ footer_img: transparent
 # 网站背景
 # 可以设置为颜色或图片
 # 图片格式: url(http://xxxxxx.com/xxx.jpg)
-background: /img/background.jpg
+background: https://i.miji.bid/2025/03/01/6f6ffd1df6f363f52fd90b465cca8175.jpeg
 
 # 封面设置
 cover:
@@ -199,9 +198,16 @@ subtitle:
   # 1 - hitokoto.cn
   # 2 - yijuzhan.com
   # 3 - jinrishici.com
-  source: 1
+  source: false
   # 如果关闭打字机效果，副标题将仅显示 sub 的第一行内容
   sub: 
+  - 你来人间一趟，你要看看太阳。
+  - 草在结它的种子，风在摇它的叶子。
+  - 为了避免结束，你避免了一切开始。
+  - 我需要最狂的风，和最静的海。
+  - 夜不下来的黄昏，明不起来的清晨。
+  - 归途也还可爱。
+  - 如果有来生，要做一棵树，站成永恒。
   
 
 # 首页文章佈局
@@ -462,10 +468,10 @@ darkmode:
   # autoChangeMode: 1  跟随系统设置，如果系统不支持暗黑模式，则在晚上 6 点到早上 6 点之间切换暗黑模式
   # autoChangeMode: 2  在晚上 6 点到早上 6 点之间切换暗黑模式
   # autoChangeMode: false  不自动切换
-  autoChangeMode: true
+  autoChangeMode: 2
   # 设置明亮模式时间，值在 0 到 24 之间。如果未设置，默认值为 6 和 18
-  start:
-  end:
+  start: 6
+  end: 18
 
 # 在返回顶部按钮中显示滚动百分比
 rightside_scroll_percent: true
@@ -1002,9 +1008,9 @@ canvas_nest:
   # 是否启用 canvas_nest
   enable: true
   # 线条颜色，默认: '0,0,0'; RGB 值: (R,G,B).(注意: 使用 ',' 分隔.)
-  color: '0,0,0'
+  color: '162,161,103'
   # 线条的不透明度 (0~1)
-  opacity: 0.7
+  opacity: 1
   # 背景的 z-index 属性
   zIndex: -1
   # 线条数量
@@ -1213,11 +1219,33 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+    #背景宇宙星光
+    - '<style type="text/css">
+        #universe { 
+          display: block;
+          position: fixed;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          outline: 0;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 1;
+        }
+      </style>'
     - '<style type="text/css">#toggle-sidebar {bottom: 80px}</style>'
   bottom:
-    - <div class="aplayer no-destroy" data-id="13378306294" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div>
-
-
+    - '<canvas id="universe"></canvas>'
+    - '<div class="aplayer no-destroy" data-id="13378306294" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div>'
+    - '<script src="/js/universe.js"></script>' # 背景宇宙星光js文件
+    # 桃花飘落特效
+    # - '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/js/sakura.js"></script>'
+    # 看板娘
+    # - '<script src="https://fastly.jsdelivr.net/npm/live2d-widgets@0/autoload.js"></script>'
+    - '<script defer src="/live2d-widget/autoload.js"></script>'
 
 # CDN 设置
 # 除非你知道它们的工作原理，否则不要修改以下设置
@@ -1228,6 +1256,7 @@ CDN:
   # 注意：将第三方脚本设置为 'local' 时，需要安装 hexo-butterfly-extjs
   internal_provider: local
   third_party_provider: jsdelivr
+  
 
   # 是否在 URL 中添加版本号，true 或 false
   version: false
@@ -1257,3 +1286,7 @@ algolia_search:
     input_placeholder: 
     hits_empty: "我们没有找到任何搜索结果: ${query}"
     hits_stats: "找到${hits}条结果（用时${time} ms）"
+
+# 看板娘
+live2d:
+  enable: true
