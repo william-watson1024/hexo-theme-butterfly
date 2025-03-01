@@ -15,11 +15,16 @@ menu:
   时间轴: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  说说: /shuoshuo/ || fas fa-comment
+  树洞: /shuoshuo/ || fas fa-comment
+  微语: /artitalk/ || fas fa-fax
   清单||fa fa-heartbeat:
     音乐: /music/ || fas fa-music
     照片: /Gallery/ || fas fa-images
-  电影: /movies/ || fas fa-video
+  豆瓣||fa fa-seedling:
+    电影: /movies/ || fas fa-video
+    读书: /books/ || fas fa-book
+    歌单: /songs/ || fas fa-music
+    游戏: /games/ || fas fa-gamepad
   友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
   
@@ -56,6 +61,7 @@ code_blocks:
 social:
   fab fa-github: https://github.com/william-watson1024 || Github || "#hdhfbb"
   fas fa-envelope: mailto:williamwatson1024@gmail.com || Email || "#000000"
+  fab fa-qq:  tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=990764375&website=www.oicqzone.com || QQ
 
 # --------------------------------------
 # 图片设置
@@ -75,10 +81,10 @@ avatar:
 disable_top_img: false
 
 # 如果页面未设置横幅，则显示默认的横幅图片
-default_top_img: /img/default_top_img.jpg
+default_top_img: https://i.miji.bid/2025/03/01/6f6ffd1df6f363f52fd90b465cca8175.jpeg
 
 # 主页的横幅图片
-index_img: /img/default_top_img.jpg
+index_img: https://i.miji.bid/2025/03/01/6f6ffd1df6f363f52fd90b465cca8175.jpeg
 
 # 归档页的横幅图片
 archive_img: 
@@ -234,7 +240,7 @@ post_copyright:
   # 是否启用版权声明
   enable: true
   # 是否进行文章 URL 解码
-  decode: false
+  decode: true
   # 作者链接
   author_href:
   # 许可证类型
@@ -305,7 +311,7 @@ footer:
   # 自定义文本
   custom_text: 木秀于林,风必摧之
   # 主题和框架的版权声明
-  copyright: true
+  copyright: false
 
 # --------------------------------------
 # 侧边栏设置
@@ -347,7 +353,7 @@ aside:
     # 是否显示公告卡片
     enable: true
     # 公告内容
-    content: This is my Blog
+    content: 人至少要有一个梦想，有一个理由去坚强，心若没有栖息的地方，到哪里都是在流浪。
   card_recent_post:
     # 是否显示最近文章卡片
     enable: true
@@ -501,7 +507,7 @@ copy:
 # 需要安装 hexo-wordcount 插件
 wordcount:
   # 是否启用字数统计
-  enable: false
+  enable: true
   # 在文章元信息中显示字数统计
   post_wordcount: true
   # 在文章元信息中显示閲读时间
@@ -549,8 +555,8 @@ math:
 search:
   # 选择：algolia_search / local_search / docsearch
   # 如果不需要搜索功能，保持为空
-  use: 
-  placeholder:
+  use: algolia_search
+  placeholder: 搜索
 
   # Algolia 搜索
   algolia_search:
@@ -956,7 +962,7 @@ hr_icon:
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
   # 是否启用打字机效果
-  enable: false
+  enable: true
   # 是否启用彩色效果
   colorful: true
   # 是否启用震动效果
@@ -993,9 +999,9 @@ canvas_fluttering_ribbon:
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   # 是否启用 canvas_nest
-  enable: false
+  enable: true
   # 线条颜色，默认: '0,0,0'; RGB 值: (R,G,B).(注意: 使用 ',' 分隔.)
-  color: '0,0,255'
+  color: '0,0,0'
   # 线条的不透明度 (0~1)
   opacity: 0.7
   # 背景的 z-index 属性
@@ -1003,7 +1009,7 @@ canvas_nest:
   # 线条数量
   count: 99
   # 是否在移动设备上启用
-  mobile: false
+  mobile: true
 
 # 鼠标点击效果: 烟花
 fireworks:
@@ -1023,11 +1029,12 @@ click_heart:
 # 鼠标点击效果: 文字
 clickShowText:
   # 是否启用文字效果
-  enable: false
+  enable: True
   text:
-    # - I
-    # - LOVE
-    # - YOU
+    - Everything
+    - Will
+    - Be
+    - Fine
   fontSize: 15px
   # 是否随机显示文字
   random: false
@@ -1042,7 +1049,7 @@ clickShowText:
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
 # 如果不需要灯箱效果，请留空
-lightbox:
+lightbox: medium_zoom
 
 # --------------------------------------
 # 标签外挂设置
@@ -1124,10 +1131,12 @@ pjax:
   enable: true
   # 排除指定页面不使用 pjax，如 '/music/'
   exclude:
+  - /movies/
+  - /artitalk/
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: true # 开启音乐播放器
+  enable: false # 开启音乐播放器
   per_page: true #每个页面都有Aplayer
 
 
@@ -1151,7 +1160,7 @@ instantpage: false
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
   # 是否启用 Lazyload
-  enable: false
+  enable: true
   # 使用浏览器的原生 lazyload 而不是 vanilla-lazyload
   native: false
   # 指定使用 Lazyload 的范围 (site 或 post)
@@ -1228,3 +1237,22 @@ CDN:
 
   option:
 
+# Artitalk
+# see https://artitalk.js.org/
+artitalk:
+  enable: true
+  appId: CiSXX5nyVSt0RIztkC1oLL9P-MdYXbMMI
+  appKey: vrfkqkuHou88MuRKfF3OeExc
+  path:
+  js:
+  option:
+  front_matter:
+
+algolia_search:
+  enable: true
+  hits:
+    per_page: 10
+  labels:
+    input_placeholder: 
+    hits_empty: "我们没有找到任何搜索结果: ${query}"
+    hits_stats: "找到${hits}条结果（用时${time} ms）"
